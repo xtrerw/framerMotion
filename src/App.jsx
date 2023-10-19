@@ -8,15 +8,15 @@ import { Navigation } from "./Navigation";
 const sidebar = {
   open:
   (height=1000)=>({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    clipPath: `polygon(0 0, ${height*2 + 200}px 0, ${height * 2 + 200}px ${height * 2 + 200}px, 0 ${height * 2 + 200}px)`,
     transition:{
       type: 'spring',
       stiffness: 20,
-      restDelta:2,
+      restDelta:2,//平滑结束
     }
    }),
   closed: { 
-    clipPath: `circle(100px at 13% 5%)`, 
+    clipPath: `polygon(0 0, 30% 0, 30% 10%, 0 10%)`, 
     transition:{
       delay:0.5,
       type: 'spring',

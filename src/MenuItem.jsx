@@ -1,6 +1,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-
+import blg from "./img/blg.jpg";
+import t1 from "./img/t1.png";
 
 const variants = {
   open: {
@@ -20,18 +21,29 @@ const variants = {
 };
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
-const equipos=["Bilibili Gaming", "Cloud9", "G2 Esports", "T1", "MAD Lions"];
-const imgUrl=["../src/img/lol.jpg"]
+const equipos=["xMizono", "Sunshine", "DazaEpico", "Buscando . . .", "Gabigoleador8"];
+const url=[t1,t1,t1,t1,t1];
 export const MenuItem = ({ i }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+  const style1 = {
+      border: `2px solid ${colors[i]}`,
+      backgroundImage: `url(${url[i]})`, //inserta imagenes
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+};
+const style2 = {
+  color: `${colors[i]}`,
+  fontSize: '20px',
+};
   return (
     <motion.li
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <img src={"../src/img/lol.jpg"} className="icon-placeholder" style={style}/>
-      <div className="text-placeholder" style={style}>{equipos[i]}</div>
+
+      <div className="icon-placeholder" style={style1} />
+      <div className="text-placeholder" style={style2}>{equipos[i]}</div>
       {/* la manera dinámica de insertar textos */}
     </motion.li>
   );

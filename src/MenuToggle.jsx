@@ -1,19 +1,19 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 
-const Path = props => (
-  <motion.path
-    fill="transparent"
-    strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
-    strokeLinecap="round"
-    {...props}
-  />
-);
+// const Path = props => (
+//   <motion.path
+//     fill="transparent"
+//     strokeWidth="3"
+//     stroke="hsl(0, 0%, 18%)"
+//     strokeLinecap="round"
+//     {...props}
+//   />
+// );
 
 export const MenuToggle = ({ toggle }) => (
   <button onClick={toggle}>
-    <svg width="23" height="23" viewBox="0 0 23 23">
+    {/* <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5" },
@@ -34,6 +34,7 @@ export const MenuToggle = ({ toggle }) => (
           open: { d: "M 3 2.5 L 17 16.346" }
         }}
       />
-    </svg>
+    </svg> */}
+    <img src="../src/img/t1.png" alt="" width="60px" height="60px"/>
   </button>
 );
