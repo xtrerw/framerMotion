@@ -4,11 +4,14 @@ import { motion, sync, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-
+import { Inicio } from "./Inicio";
+import { Juegos } from "./Juegos";
+import { Sobre } from "./Sobre";
+import { Route, Routes,Link } from "react-router-dom";
 const sidebar = {
   open:
   (height=1000)=>({
-    clipPath: `polygon(0 0, ${height*2 + 200}px 0, ${height * 2 + 200}px ${height * 2 + 200}px, 0 ${height * 2 + 200}px)`,
+    clipPath: `circle( ${height*2 + 200}px at 40px 40px)`,
     transition:{
       type: 'spring',
       stiffness: 20,
@@ -16,7 +19,7 @@ const sidebar = {
     }
    }),
   closed: { 
-    clipPath: `polygon(0 0, 30% 0, 30% 10%, 0 10%)`, 
+    clipPath: `circle( 80px at 40px 40px)`, 
     transition:{
       delay:0.5,
       type: 'spring',
@@ -25,22 +28,38 @@ const sidebar = {
     }
   },
 }
-
 function App() {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
   return (
-    <motion.nav
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      custom={height}
-      ref={containerRef}
-    >
-      <motion.div className="background" variants={sidebar} />
-      <Navigation />
-      <MenuToggle toggle={() => toggleOpen()} />
-    </motion.nav>
+    <>
+        <motion.nav
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+        >
+        <motion.div className="navbar">
+          <motion.div className="navitem">
+            <Link to='/juegos' className="link">Juegos</Link>
+            <Link to='/about' className="link">Sobre nosotros</Link>
+          </motion.div>
+        </motion.div>
+        <Link to='/'>
+          <motion.div className="background" variants={sidebar}/>
+        </Link>
+        
+        <Navigation />
+        <MenuToggle toggle={() => toggleOpen()} />
+        </motion.nav>
+        <Routes>
+          <Route path="/" element={<Inicio/>}/>
+          <Route path="/juegos" element={<Juegos/>}/>
+          <Route path="/about" element={<Sobre/>}/>
+        </Routes>
+    </>
+    
   )
 }
 

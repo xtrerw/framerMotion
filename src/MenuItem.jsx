@@ -1,6 +1,5 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import blg from "./img/blg.jpg";
 import t1 from "./img/t1.png";
 
 const variants = {
