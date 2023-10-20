@@ -44,6 +44,8 @@ function App() {
           <motion.div className="navitem">
             <Link to='/juegos' className="link">Juegos</Link>
             <Link to='/about' className="link">Sobre nosotros</Link>
+            <Link to='/juegos' className="link">Tienda</Link>
+            <Link to='/about' className="link">Noticias</Link>
           </motion.div>
         </motion.div>
         <Link to='/'>
