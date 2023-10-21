@@ -6,15 +6,30 @@ export const Juegos = () => {
   return (
     <>
       <motion.div className='juegos'>
+        {/* carta 1 */}
         <motion.div
         layout
-        // data-isOpen={isOpen}
-        initial={{ borderRadius: 50 }}
+        data-isOpen={isOpen}
         className="parent"
         onClick={() => setIsOpen(!isOpen)}
        >
-        <motion.div layout className="child" />
-      </motion.div>
+        <motion.img layout className="child" 
+        data-isOpen={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+        />
+        </motion.div>
+        {/* carta 2 */}
+        <motion.div
+        layout
+        data-isOpen={isOpen}
+        className="parent"
+        onClick={() => setIsOpen(!isOpen)}
+       >
+        <motion.img layout className="child" 
+        data-isOpen={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+        />
+        </motion.div>
       </motion.div>
     </>
     

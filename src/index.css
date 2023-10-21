@@ -61,29 +61,36 @@ nav {
 }
 /* estilo de página de juegos */
 .juegos {
-  background: burlywood;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 .parent {
-  background: white;
-  width: 100px;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: black;
 }
 
 .parent[data-isOpen="true"] {
-  width: 400px;
-  height: 200px;
+  width: 100%;
+  height: 100%-100px;
+  background: black;
 }
 
 .child {
-  width: 40px;
-  height: 40px;
-  background: #f107a3;
-  border-radius: 50%;
+  background-image: url('./img/juegobg1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 2px 2px 1rem black;
+  width: 200px;
+  height: 300px;
+}
+.child[data-isOpen="true"] {
+  scale: 1.5;
 }
 /* estilo de página de aboutUs */
 .sobre {
