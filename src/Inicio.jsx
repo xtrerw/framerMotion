@@ -7,7 +7,27 @@ import { useEffect } from 'react';
 
 const imgs=[bg1,bg2,bg3];
 export const Inicio = () => {
-  const [[pagina,direccion],setImg]=useState([0,0]);
+  const variants = {
+    enter: () => {
+      return {
+        x:  '-100%',
+        opacity: 0
+      };
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: () => {
+      return {
+        zIndex: 0,
+        x:  '100%',
+        opacity: 0
+      };
+    }
+  };
+  const [[pagina],setImg]=useState([0,0]);
   const index = wrap(0,imgs.length,pagina);
   useEffect(() => {
     const timer = setInterval(() => {
@@ -17,15 +37,15 @@ export const Inicio = () => {
   }, [pagina]);
   return (
     <motion.div className='inicio'>
-      <AnimatePresence initial={false} custom={direccion}>
+      <AnimatePresence initial={false} >
         <motion.img
         className='imagen'
           key={pagina}
           src={imgs[index]}
-          custom={direccion}
-          // initial={{opacity:0}}
-          // animate={{opacity:1}}
-          // exit={{opacity:0}}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
         />
       </AnimatePresence>
     </motion.div>

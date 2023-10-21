@@ -34,12 +34,6 @@ function App() {
   const { height } = useDimensions(containerRef);
   return (
     <>
-        <motion.nav
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-        custom={height}
-        ref={containerRef}
-        >
         <motion.div className="navbar">
           <motion.div className="navitem">
             <Link to='/juegos' className="link">Juegos</Link>
@@ -48,20 +42,27 @@ function App() {
             <Link to='/about' className="link">Noticias</Link>
           </motion.div>
         </motion.div>
+        <motion.nav
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+        >
         <Link to='/'>
           <motion.div className="background" variants={sidebar}/>
         </Link>
-        
         <Navigation />
         <MenuToggle toggle={() => toggleOpen()} />
         </motion.nav>
+
         <Routes>
           <Route path="/" element={<Inicio/>}/>
           <Route path="/juegos" element={<Juegos/>}/>
           <Route path="/about" element={<Sobre/>}/>
+          
         </Routes>
+        
     </>
-    
   )
 }
 
