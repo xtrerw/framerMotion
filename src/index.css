@@ -58,7 +58,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
 }
 .titulo{
@@ -74,34 +73,72 @@ body {
 }
 .child {
   position: relative;
-  background-image: url('./img/juegobg1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 2px 2px 1rem black;
-  opacity: 0.5;
+  box-shadow: 2px 2px 1rem rgb(4, 219, 176);
+  border-radius: 1rem;
+  opacity: 1;
   width: 200px;
   height: 300px;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
 }
+/* carta1 */
+.child1{
+  background-image: url('../src/img/juegobg1black.jpg');
+}
+.child1:hover{
+  background-image: url('/src/img/juegobg1.jpg');
+}
+/* estilo logo1 */
+.logo1 {
+  position: absolute;
+  width: 100px;
+  top: 40%;
+}
+.child:hover .logo1{
+  transition: 0.5s linear;
+  top: 30%;
+}
+/* estilo texto1 */
 .texto{
-  right: 120%;
-  left: -200%;
-  top: 20%;
-  color: white;
+  position: absolute;
   font-weight: bolder;
+  font-size: 10px;
   opacity: 0;
+  padding: 1rem;
+  bottom: 0;
+  background-image: linear-gradient(45deg,#43e59fa6, black);
 }
-.texto[data-isOpen="true"]{
-  transition: 2s;
+.child:hover .texto{
+  bottom: 50px;
+  transition: 0.5s linear;
   opacity: 1;
 }
-.child:hover{
-  opacity: 1;
+.texto1{
+  color: white;
 }
-.child[data-isOpen="true"] {
-  scale: 2;
-  opacity: 1;
-  z-index: 1;
+/* carta 2 */
+.child2{
+  background-image: url('../src/img/juegobg2black.jpg');
+}
+.child2:hover{
+  background-image: url('/src/img/juegobg2.jpg');
+}
+.texto2{
+  color: rgb(243, 8, 156);
+}
+/* carta 3 */
+.child3{
+  background-image: url('../src/img/juegobg3black.jpg');
+}
+.child3:hover{
+  background-image: url('/src/img/juegobg3.jpg');
+}
+.texto3{
+  color: rgb(243, 8, 156);
 }
 /* estilo de página de aboutUs */
 .sobre {
@@ -109,6 +146,7 @@ body {
   width: 100vw;
   height: 100vh;
 }
+/*  */
 button {
   outline: none;
   border: none;
@@ -155,19 +193,4 @@ li {
   width: 200px;
   height: 20px;
   flex: 1;
-}
-
-.refresh {
-  padding: 10px;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
 }

@@ -8,20 +8,15 @@ export const Carta2 = () => {
         enter: () => {
           return {
             x:  -1000,
-            opacity: 0
-          };
+         };
         },
         center: {
-          zIndex: 1,
           x: 0,
-          opacity: 0.5
         },
         exit: () => {
           return {
-            zIndex: 0,
             x:  1000,
-            opacity: 0
-          };
+         };
         }
       };
   return (
@@ -30,10 +25,19 @@ export const Carta2 = () => {
         initial="enter"
         animate="center"
         exit="exit"
-    data-isopen={isOpen}
-    onClick={() => setIsOpen(!isOpen)}
-    className="child" 
+    whileHover={{
+      scale:1.5
+    }}
+    className="child child2" 
     >
+      <motion.img 
+            src='../src/img/logo2.png'
+              className='logo1'
+            />
+            <motion.p 
+            className='texto texto2'
+            >¡Bienvenidos a la Universidad Europea de Madrid, hogar del equipo de League of Legends más formidable!
+            </motion.p>
     </motion.div>
   )
 }
