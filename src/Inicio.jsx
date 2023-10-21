@@ -11,19 +11,19 @@ export const Inicio = () => {
     enter: () => {
       return {
         x:  '-100%',
-        opacity: 0
+        opacity: 1,
       };
     },
     center: {
       zIndex: 1,
       x: 0,
-      opacity: 1
+      opacity: 1,
     },
     exit: () => {
       return {
         zIndex: 0,
         x:  '100%',
-        opacity: 0
+        opacity: 1,
       };
     }
   };
@@ -32,7 +32,7 @@ export const Inicio = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setImg([pagina + 1, 1]);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(timer);
   }, [pagina]);
   return (
