@@ -14,7 +14,7 @@ export const Carta1 = () => {
         center: {
           zIndex: 1,
           y: 0,
-          opacity: 1
+          opacity: 0.5
         },
         exit: () => {
           return {

@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Carta1 } from './Carta1'
 import { Carta2 } from './Carta2'
-
+import { Carta3 } from './Carta3'
 
 export const Juegos = () => {
   return (
@@ -37,6 +37,7 @@ export const Juegos = () => {
         {/* carta 2 */}
         <Carta2/>
         {/* carta 3 */}
+        <Carta3/>
         </motion.div>
       </motion.div>
     </>
