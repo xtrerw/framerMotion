@@ -8,6 +8,12 @@ export const Juegos = () => {
   return (
     <>
       <motion.div className='juegos'>
+        <motion.video src='../src/img/bgJuego.mp4'
+        autoPlay
+        muted
+        loop
+        style={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover' }}
+        />
         <motion.div className='contiene'>
           <motion.h1 className='titulo'>
           MEET OUR <b>SQUADS</b>
@@ -16,22 +22,22 @@ export const Juegos = () => {
           Entertainers, champions, and legends in multiple titles, our squads are at the top of their game. Learn more about them below.
           </motion.p>
         </motion.div>
-      <motion.div
-        initial={{
-          width: 'auto',
-          height: 'auto',
-        }}
-        animate={{
-          width: '100%',
-          height: '100%-100px',
-          background: 'black',
-        }}
-        transition={{
-          type: 'fade',
-          duration:1
-        }}
-        className="parent"
-       >
+        <motion.div
+          initial={{
+            width: 'auto',
+            height: 'auto',
+          }}
+          animate={{
+            width: '100%',
+            height: '100%-100px',
+            background: 'black',
+          }}
+          transition={{
+            type: 'fade',
+            duration:1
+          }}
+          className="parent"
+        >
         {/* carta 1 */}
         <Carta1/>
         {/* carta 2 */}
