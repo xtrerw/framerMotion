@@ -8,6 +8,7 @@ export const Juegos = () => {
   return (
     <>
       <motion.div className='juegos'>
+        {/* necesito modificar */}
         <motion.video src='../src/img/bgJuego.mp4'
         autoPlay
         muted
