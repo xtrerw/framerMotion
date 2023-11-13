@@ -13,7 +13,7 @@ export const Juegos = () => {
           <motion.h1 className='titulo'>
           MEET OUR <b>SQUADS</b>
           </motion.h1>
-          <motion.p>
+          <motion.p className='descripcion'>
           Entertainers, champions, and legends in multiple titles, our squads are at the top of their game. Learn more about them below.
           </motion.p>
         </motion.div>
