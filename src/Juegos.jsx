@@ -9,12 +9,6 @@ export const Juegos = () => {
     <>
       <motion.div className='juegos'>
         {/* necesito modificar */}
-        <motion.video src='../src/img/bgJuego.mp4'
-        autoPlay
-        muted
-        loop
-        style={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover' }}
-        />
         <motion.div className='contiene'>
           <motion.h1 className='titulo'>
           MEET OUR <b>SQUADS</b>
@@ -30,8 +24,6 @@ export const Juegos = () => {
           }}
           animate={{
             width: '100%',
-            height: '100%-100px',
-            background: 'black',
           }}
           transition={{
             type: 'fade',

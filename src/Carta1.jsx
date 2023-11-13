@@ -26,7 +26,7 @@ export const Carta1 = () => {
           exit="exit"
           className="child child1"
           whileHover={{
-            scale:1.5
+            scale:1.5,
           }}
           >
             <motion.img 
